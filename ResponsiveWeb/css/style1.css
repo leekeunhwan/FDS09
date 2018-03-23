@@ -31,7 +31,6 @@ body {
 
 .header {
     background-color: yellow;
-    height: 10vh;
 }
 
 
@@ -46,23 +45,37 @@ body {
 /* 메인 */
 
 .main {
-    background-color: #fcf;
+    background-color: pink;
     height: 60vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 .main section {
-    /* background-color: #3fc; */
+    background-color: teal;
+    height: 30vh;
 }
 
-.recommand-book {}
+.recommand-book {
+    width: 350px;
+}
 
-.news {}
+.news {
+    width: 650px;
+}
 
-.board {}
+.board {
+    width: 350px;
+}
 
-.favorite-site {}
+section.favorite-site {
+    width: 250px;
+}
 
-.twitter {}
+.twitter {
+    width: 400px;
+}
 
 
 /* 슬로건 */
