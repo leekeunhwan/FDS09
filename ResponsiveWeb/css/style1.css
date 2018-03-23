@@ -1,0 +1,81 @@
+@charset "utf-8";
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+
+/* 컨테이너 */
+
+.container {
+    height: 100vh;
+    background-color: gray;
+}
+
+.header,
+.main,
+.slogan {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* 헤더 */
+
+.header {
+    background-color: yellow;
+    height: 10vh;
+}
+
+
+/* 내비게이션 */
+
+.navigation {
+    background-color: lime;
+    height: 10vh;
+}
+
+
+/* 메인 */
+
+.main {
+    background-color: #fcf;
+    height: 60vh;
+}
+
+.main section {
+    /* background-color: #3fc; */
+}
+
+.recommand-book {}
+
+.news {}
+
+.board {}
+
+.favorite-site {}
+
+.twitter {}
+
+
+/* 슬로건 */
+
+.slogan {
+    background-color: orange;
+    height: 10vh;
+}
+
+
+/* 푸터 */
+
+.footer {
+    background-color: skyblue;
+    height: 10vh;
+}
