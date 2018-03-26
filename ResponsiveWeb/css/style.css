@@ -1,55 +1,165 @@
 @charset "utf-8";
+@import url("normalize.css");
+@import url("fonts.css");
+/* 초기화 스타일 */
+
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
+ul {
+list-style-type: none;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+/* 숨김 콘텐츠 */
+
+legend, .a11y-hidden {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* 기본 스타일 */
 body {
-    background-color: #ff0;
+    background-color: #fff;
+    color: #181818;
+    font-family: 'Noto Sans Regular', sans-serif;
 }
 
+/* 컨테이너 */
+.container {
+    height: 100vh;
+    background: gray;
+}
+
+/* 레이아웃 공통 */
+.header,
+.main,
+.slogan {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* 헤더 */
+.header {
+    background-color: yellow;
+}
+
+/* 로고 */
+.logo {
+    background-color: blue;
+    float: left;
+    margin: 0;
+    padding: 1em;
+    
+}
+
+/* 멤버 링크 */
+.member {
+    background-color: aqua;
+    float: right;    
+}
+
+.member li {
+    float: left;
+    
+}
+
+/* 검색 폼 */
+
+.search {
+    clear: both;
+    float: right;
+    
+}
+
+.search fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    
+}
+
+/* 내비게이션 */
+
+.navigation {
+    background-color: lime;
+    height: 10vh;
+}
+
+/* 메인 콘텐츠 */
 .main {
-    background-color: #fcf;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 150px 150px;
-    /* grid-template-areas: "book     news     " "board     twitter     site"; */
-    grid-gap: 50px;
+    background-color: pink;
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; */
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
 }
 
 .main section {
-    background-color: #3fc;
+    height: 30vh;
 }
 
-.recommand-book {
-    grid-area: book;
-    grid-column: 1;
-    grid-row: 1;
+.recommend-book {
+    width: 350px;
+    background-color: teal;
+    float: left;
 }
 
 .news {
-    grid-area: news;
-    grid-row: 1;
-    grid-column: 2/4;
+    width: 650px;
+    background-color: tan;
+    float: left;
 }
 
 .board {
-    grid-area: board;
-    grid-row: 2;
-    grid-column: 1;
+    width: 350px;
+    background-color: skyblue;
+    float: left;
 }
 
 .favorite-site {
-    grid-area: site;
-    grid-row: 2;
-    grid-column: 3;
+    /* order: 1; */
+    width: 250px;
+    background-color: orangered;
+    float: right;
 }
 
 .twitter {
-    grid-area: twitter;
-    grid-row: 2;
-    grid-column: 2;
+    width: 400px;
+    background-color: blueviolet;
+    float: left;
+}
+
+/* 슬로건 */
+
+.slogan {
+    background-color: silver;
+    height: 10vh;
+    clear: both;
+    margin-top: 10px;
+}
+
+/* 푸터 */
+
+.footer {
+    background-color: skyblue;
+    height: 10vh;
 }

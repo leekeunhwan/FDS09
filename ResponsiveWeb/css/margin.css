@@ -1,0 +1,14 @@
+@charset "utf-8";
+.box {
+    background-color: gray;
+    height: 300px;
+    width: 800px;
+    margin: 50px auto;
+    padding: 0 50px;
+}
+
+.box1 {
+    background-color: yellow;
+    height: 100px;
+    margin: 0 -50px;
+}
