@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+.fix {
+  background-color: lightsalmon;
+  position: fixed;
+  width: 200px;
+  top: 50px;
+  right: 50px;
+}
+
+.sticky {
+  position: sticky;
+  background-color: cyan;
+  /* width: 80%; */
+  text-align: center;
+  padding: 20px;
+  left: 50px;
+  right: 50px;
+  top: 20px;
+}
