@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+body {
+  margin: 100px;
+}
+
+/* transition 애니메이션 효과 */
+.box {
+  background-color: yellow;
+  border: 5px solid #000;
+  width: 300px;
+  height: 300px;
+  /* text-align: center;
+  line-height: 300px;   과거에는 line-height를 이용하여 센터처리도 하곤했음 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms;
+}
+
+.box:hover {
+  border-radius: 50% 0 50% 0;
+  transform: rotate(360deg) translateX(50px) scale(2, 2);
+}
+
+/* CSS3 애니메이션 규칙 */
+
+@keyframes text-ani {
+  0% {
+    font-size: 20px;
+    transform: translate(0, 0);
+  }
+  100% {
+    font-size: 40px;
+    transform: translate(500px, 150px);
+  }
+}
+
+.text {
+  width: 800px;
+  margin: 50px auto;
+  height: 300px;
+  border: 5px solid #000;
+  background-color: pink;
+}
+
+.inner {
+  display: inline-block;
+  background-color: aquamarine;
+  animation: text-ani 3000ms forwards infinite alternate ease-in-out;
+  /* animation-name: text-ani;
+  animation-duration: 3000ms;
+  animation-fill-mode: backwards;
+  animation-delay: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-play-state: running; */
+}
