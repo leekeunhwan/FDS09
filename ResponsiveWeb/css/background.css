@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+@import url("reset.css");
+
+body {
+  font-size: 1.5rem; /* 16px(html font-size 기본값) * 1.5 = 24px */
+}
+
+/* 헤더 */
+.header {
+  height: 100px;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 1px 5px 0 #999;
+  position: sticky;
+  top: 0;
+}
+
+.brand {
+  font-size: 2rem; /* 16px * 2 = 32px */
+}
+
+.menu {
+  display: flex;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 1em; /* em은 부모의 폰트 값을 상속받으므로 24px * 1 = 24px */
+  padding: 0.5em; /* 24px * 0.5 = 12px */
+  margin-left: 0.5em; /* 24px * 0.5 = 12px */
+}
+
+/* 섹션 */
+section {
+  height: 50vh;
+}
+
+.normal {
+  background: url("../images/normal.jpg") no-repeat 0 0 fixed;
+}
+
+.small {
+  background: #fff;
+}
+
+.medium {
+  background: url("../images/medium.jpg") no-repeat 0 0 /100% 100% fixed;
+}
+
+.large {
+  background: #fff;
+}
+
+/* 푸터 */
+.footer {
+  height: 100px;
+  text-align: center;
+  box-shadow: inset 2px 2px #999;
+}

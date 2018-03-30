@@ -32,6 +32,13 @@ legend,
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
+/* ClearFix */
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
 
 /* 기본 스타일 */
 
@@ -46,11 +53,40 @@ body {
   font-family: "Noto Sans Regular", sans-serif;
 }
 
+/* grid 토글 버튼 */
+
+.btn-grid {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  background: #000;
+  color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+}
+
 /* 컨테이너 */
 
 .container {
-  height: 100vh;
-  background: gray;
+  position: relative;
+}
+
+.is-act::before {
+  content: "";
+  position: absolute;
+  width: 1000px;
+  height: 100%;
+  background: #00f;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0.2),
+    rgba(255, 0, 0, 0.2) 65px,
+    transparent 65px,
+    transparent 85px
+  );
 }
 
 /* 레이아웃 공통 */
@@ -256,13 +292,13 @@ input[type="search"] {
   cursor: pointer;
   font-size: 1.8rem;
   padding: 0.5em 0;
-  font-family: 'Noto Sans Bold', sans-serif;
+  font-family: "Noto Sans Bold", sans-serif;
   text-shadow: 0px 1px 0 #000, 1px 0px 0 #000, 0px -1px 0 #000, -1px 0px 0 #000;
   /* transition-property: color, font-size;
   transition-duration: 3000ms, 2000ms;
   transition-delay: 0s, 3s;
   transition-timing-function: cubic-bezier(1, .01, 0, 1.01); */
-  transition: all 5s ease;
+  transition: all 500ms ease;
 }
 
 .menu span:hover,
@@ -288,51 +324,136 @@ input[type="search"] {
 /* 메인 콘텐츠 */
 
 .main {
-  background-color: pink;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px
+    65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px;
+  -ms-grid-rows: auto auto;
+  grid-template-columns: repeat(12, 65px);
+  grid-column-gap: 20px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "book  book  book  book  news    news    news    news    news    news news news"
+    "board board board board twitter twitter twitter twitter twitter site site site";
   /* display: flex;
     flex-flow: row wrap;
     justify-content: space-between; */
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: block;
-}
-
-.main section {
+/* .main section {
   height: 30vh;
-}
+} */
 
 .recommend-book {
-  width: 350px;
-  background-color: teal;
-  float: left;
+  /* width: 350px; */
+  /* grid-area: 1 / 1 / 1 / span 4; */
+  grid-area: book;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8; /* ms는 뭐..  */
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  /* float: left; */
+}
+
+/* 추천서적 제목 */
+
+.recommend-book-heading {
+  background: url("./images/sprite_main.png") no-repeat;
+  margin: 1em 0;
+  min-height: 60px;
+  padding: 5px 0 0 65px;
+}
+
+.recommend-book-heading .en-heading {
+  display: block;
+  color: #abd375;
+}
+
+/* 추천서적 이미지 */
+.recommend-book-cover {
+  width: 15em;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.recommend-book-cover img {
+  max-width: 100%; /* 원본이미지의 크기를 넘어가지 않도록 한다 */
+}
+
+.recommend-book-detail {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.recommend-book-author,
+.recommend-book-author-name {
+  display: inline-block;
+}
+
+.recommend-book-author-name {
+}
+
+/* 추천서적 평점 */
+
+.recommend-book-grade {
+  color: #abd375;
+  font-size: 1.5em;
+}
+
+/* 추천서적 요약정보 */
+
+.recommend-book-summary {
+  line-height: 1.5;
+  margin: 1em 0;
 }
 
 .news {
-  width: 650px;
+  /* width: 650px; */
   background-color: tan;
-  float: left;
+  /* grid-area: 1 / 5 / 1 / span 8; */
+  grid-area: news;
+  /* float: left; */
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 24;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
 }
 
 .board {
-  width: 350px;
+  /* width: 350px; */
   background-color: skyblue;
-  float: left;
+  /* grid-area: 2 / 1 / 2 / span 4; */
+  grid-area: board;
+  /* float: left; */
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
 }
 
 .favorite-site {
   /* order: 1; */
-  width: 250px;
-  background-color: orangered;
-  float: right;
+  /* width: 250px; */
+  background-color: palegreen;
+  /* grid-area: 2 / 10 / 2 / span 3; */
+  grid-area: site;
+  /* float: right; */
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 18;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
 }
 
 .twitter {
-  width: 400px;
+  /* width: 400px; */
   background-color: blueviolet;
-  float: left;
+  /* grid-area: 2 / 5 / 2 / span 5; */
+  grid-area: twitter;
+  /* float: left; */
+  -ms-grid-column: 18;
+  -ms-grid-column-span: 24;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
 }
 
 /* 슬로건 */
