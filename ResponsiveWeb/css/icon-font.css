@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+@import url("./fontawesome-free-5.0.4/web-fonts-with-css/css/fontawesome.min.css");
+
+ul {
+  list-style-type: none;
+}

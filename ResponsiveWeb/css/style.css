@@ -32,6 +32,7 @@ legend,
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
+
 /* ClearFix */
 
 .clearfix::after {
@@ -332,9 +333,7 @@ input[type="search"] {
   grid-template-columns: repeat(12, 65px);
   grid-column-gap: 20px;
   grid-template-rows: auto auto;
-  grid-template-areas:
-    "book  book  book  book  news    news    news    news    news    news news news"
-    "board board board board twitter twitter twitter twitter twitter site site site";
+  grid-template-areas: "book  book  book  book  news    news    news    news    news    news news news" "board board board board twitter twitter twitter twitter twitter site site site";
   /* display: flex;
     flex-flow: row wrap;
     justify-content: space-between; */
@@ -344,40 +343,59 @@ input[type="search"] {
   height: 30vh;
 } */
 
+/* 메인 콘텐츠 섹션 제목 공통 */
+
+.main-section-heading {
+  background-image: url("./images/sprite_main.png");
+  background-repeat: no-repeat;
+  margin: 1em 0;
+  min-height: 60px;
+  padding: 5px 0 0 65px;
+}
+
+.en-heading {
+  display: block;
+}
+
+/* 메인 콘텐츠 단락 공통 */
+.main [class$="-summary"] {
+  line-height: 1.5;
+  margin: 1em 0;
+}
+
+/* 추천 서적 */
 .recommend-book {
   /* width: 350px; */
   /* grid-area: 1 / 1 / 1 / span 4; */
   grid-area: book;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 8; /* ms는 뭐..  */
+  -ms-grid-column-span: 8;
+  /* ms는 뭐..  */
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   /* float: left; */
 }
 
 /* 추천서적 제목 */
-
 .recommend-book-heading {
-  background: url("./images/sprite_main.png") no-repeat;
-  margin: 1em 0;
-  min-height: 60px;
-  padding: 5px 0 0 65px;
+  background-position: 0 0;
 }
-
 .recommend-book-heading .en-heading {
-  display: block;
   color: #abd375;
 }
 
 /* 추천서적 이미지 */
+
 .recommend-book-cover {
-  width: 15em;
+  width: 75%;
   margin: 1em auto;
   text-align: center;
 }
 
 .recommend-book-cover img {
-  max-width: 100%; /* 원본이미지의 크기를 넘어가지 않도록 한다 */
+  max-width: 100%;
+  height: auto;
+  /* 원본이미지의 크기를 넘어가지 않도록 한다 */
 }
 
 .recommend-book-detail {
@@ -390,9 +408,6 @@ input[type="search"] {
   display: inline-block;
 }
 
-.recommend-book-author-name {
-}
-
 /* 추천서적 평점 */
 
 .recommend-book-grade {
@@ -400,16 +415,10 @@ input[type="search"] {
   font-size: 1.5em;
 }
 
-/* 추천서적 요약정보 */
-
-.recommend-book-summary {
-  line-height: 1.5;
-  margin: 1em 0;
-}
+/* 새소식 */
 
 .news {
   /* width: 650px; */
-  background-color: tan;
   /* grid-area: 1 / 5 / 1 / span 8; */
   grid-area: news;
   /* float: left; */
@@ -418,6 +427,66 @@ input[type="search"] {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
 }
+
+/* 선생님이 짜신 CSS */
+/* 새소식 제목 */
+.news-heading {
+  background-position: 0 -230px;
+}
+
+.news-heading .en-heading {
+  color: #e8ca58;
+}
+
+/* 새소식 동영상 */
+.news-container {
+  margin: 1em 0;
+}
+
+.news-video {
+  max-width: 100%;
+  height: auto;
+}
+
+.news-date {
+  display: block;
+  text-align: right;
+}
+
+/* 내가 한 CSS */
+/* 새소식 제목 */
+/* .news-heading {
+  background: url("./images/sprite_main.png") no-repeat 0px -230px;
+  margin: 1em 0;
+  min-height: 60px;
+  padding: 5px 0 0 65px;
+}
+
+.news-heading .en-heading {
+  display: block;
+  color: #d1ab39;
+} */
+
+/* 새소식 비디오 */
+/* .news-container .news-video {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.news-container .news-caption {
+  color: white;
+}
+
+.news-container .news-summary {
+  line-height: 1.5;
+  margin: 15px 0;
+  font-size: 1em;
+}
+
+.news .news-date {
+  display: block;
+  text-align: right;
+} */
 
 .board {
   /* width: 350px; */
