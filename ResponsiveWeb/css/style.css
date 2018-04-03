@@ -35,7 +35,8 @@ legend,
 
 /* ClearFix */
 
-.clearfix::after {
+.clearfix::after,
+.board-list li::after {
   content: "";
   clear: both;
   display: block;
@@ -324,6 +325,10 @@ input[type="search"] {
 
 /* 메인 콘텐츠 */
 
+body a:hover {
+  color: red;
+}
+
 .main {
   display: -ms-grid;
   display: grid;
@@ -488,9 +493,9 @@ input[type="search"] {
   text-align: right;
 } */
 
+/* 게시판 */
 .board {
   /* width: 350px; */
-  background-color: skyblue;
   /* grid-area: 2 / 1 / 2 / span 4; */
   grid-area: board;
   /* float: left; */
@@ -498,8 +503,73 @@ input[type="search"] {
   -ms-grid-column-span: 8;
   -ms-grid-row: 2;
   -ms-grid-row-span: 3;
+  position: relative;
 }
 
+/* 게시판 제목 */
+.board-heading {
+  background-position: 0 -115px;
+  margin-bottom: 0.5em;
+}
+
+.board-heading .en-heading {
+  color: #c7b39a;
+}
+
+/* 게시판 목록 */
+
+.board-list li {
+  margin: 0.5em 0;
+}
+
+.board-list a,
+.board-list time {
+  vertical-align: middle; /* 세로축의 중심을 맞추는 것 */
+}
+
+.board-list a {
+  display: inline-block;
+  width: calc(100% - 100px);
+  white-space: nowrap; /* 강제 줄바꿈을 허용하지 않도록 하는 것 */
+  overflow: hidden; /* 넘치는 부분을 숨기도록 한다. */
+  text-overflow: ellipsis; /* text-overflow는 글자가 넘치는 부분에 대해서 어떻게 할것인지를 정한다. ellipsis는 글씨가 공간에 비해서 많을 경우 줄일수 있도록 하는 것 */
+  padding: 0.5em 0;
+}
+
+.board-more {
+  position: absolute;
+  top: 1.5em;
+  right: -0.5em;
+  padding: 0.5em;
+}
+
+.board-more::before {
+  color: #4f881e;
+}
+
+/* 내가 짠 코드 */
+/* 
+.board-heading {
+  background-position: 0 -115px;
+  background-color: blue;
+}
+.board-heading .en-heading {
+  color: #c6b29a;
+}
+.board .board-list {
+  background-color: red;
+  display: inline-block;
+}
+.board .board-list time {
+  background-color: yellow;
+  float: right;
+}
+.board .board-more {
+  background-color: aqua;
+  float: right;
+} */
+
+/* 인기 사이트 */
 .favorite-site {
   /* order: 1; */
   /* width: 250px; */
@@ -513,9 +583,9 @@ input[type="search"] {
   -ms-grid-row-span: 3;
 }
 
+/* 트위터 */
 .twitter {
   /* width: 400px; */
-  background-color: blueviolet;
   /* grid-area: 2 / 5 / 2 / span 5; */
   grid-area: twitter;
   /* float: left; */
@@ -523,7 +593,101 @@ input[type="search"] {
   -ms-grid-column-span: 24;
   -ms-grid-row: 2;
   -ms-grid-row-span: 3;
+  position: relative;
 }
+
+/* 선생님이 짜신 코드 */
+.twitter-heading {
+  background-position: 0 -460px;
+}
+
+.twitter-heading .en-heading {
+  color: #6aaee6;
+}
+
+/* 트위터 사용자 정보 */
+.twitter-user-info {
+  float: left;
+  width: calc(100% - 150px);
+  margin-bottom: 1em;
+}
+
+.twitter-user-name,
+.twitter-user-id {
+  float: left;
+}
+
+.twitter-user-name {
+  color: #6aaee6;
+}
+
+.twitter-user-id {
+  font-family: "Noto Sans Bold";
+}
+
+/* 트위터 사용자 프로필 이미지 */
+.twitter-user-picture {
+  float: right;
+  margin: 0 0 0.5em 1em;
+}
+
+.twitter-thumbnail {
+  border-radius: 50%;
+  border: 1px solid #333;
+  padding: 0.5em;
+}
+
+/* 트위터 본문 */
+.twitter-summary {
+}
+
+/* 트위터 게시물 날짜 */
+.twitter-date {
+  display: block;
+  clear: both;
+  text-align: right;
+}
+
+/* 내가 짠 코드 */
+/* .twitter-heading {
+  background-position: 0 -460px;
+}
+
+.twitter-heading .en-heading {
+  color: #4baeeb;
+}
+
+.twitter-user-info {
+  display: inline-block;
+}
+
+.twitter-user-name {
+  display: inline-block;
+}
+
+.twitter-user-id {
+  display: inline-block;
+}
+
+.twitter-user-picture .twitter-thumbnail {
+  display: inline-block;
+  position: absolute;
+  padding: 5px;
+  top: 60px;
+  right: 0;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.twitter-summary {
+  display: block;
+  width: 270px;
+}
+
+.twitter-date {
+  float: right;
+  margin-right: 20px;
+} */
 
 /* 슬로건 */
 

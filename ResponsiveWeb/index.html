@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Cafe</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/webcafe.js"></script>
 </head>
 
 <body>
@@ -138,7 +140,7 @@
                 <h2 class="news-heading main-section-heading">
                     새소식
                     <span class="en-heading">
-                        Web Cafe News
+                        WebCafe News
                     </span>
                 </h2>
                 <figure class="news-container">
@@ -162,16 +164,68 @@
                     2018.04.02
                 </time>
             </section>
-            <section class="board">게시판</section>
+            <section class="board">
+                <h2 id="board" class="board-heading main-section-heading">
+                    게시판
+                    <span class="en-heading">
+                        WebCafe Board
+                    </span>
+                </h2>
+                <ul class="board-list">
+                    <li class="icon-star">
+                        <a href="#">HTML의 모든 것을 알려주마 샘플 활용법</a>
+                        <time datetime="2018-04-03T12:09:23">2018.04.03</time>
+                    </li>
+                    <li class="icon-star">
+                        <a href="#">W3C 사이트 리뉴얼 및 공지사항</a>
+                        <time datetime="2018-04-03T12:09:23">2018.04.03</time>
+                    </li>
+                    <li class="icon-star">
+                        <a href="#">KWCAG2.1 소식</a>
+                        <time datetime="2018-04-03T12:09:23">2018.04.03</time>
+                    </li>
+                    <li class="icon-star">
+                        <a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+                        <time datetime="2018-04-03T12:09:23">2018.04.03</time>
+                    </li>
+                    <li class="icon-star">
+                        <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
+                        <time datetime="2018-04-03T12:09:23">2018.04.03</time>
+                    </li>
+                </ul>
+                <a class="board-more icon-plus" href="#" aria-labelledby="board">더보기</a>
+            </section>
             <section class="favorite-site">인기 사이트</section>
-            <section class="twitter">트위터</section>
+            <article class="twitter">
+                <h2 class="twitter-heading main-section-heading">
+                    트위터
+                    <span class="en-heading">
+                        WebCafe Twitter
+                    </span>
+                </h2>
+                <dl class="twitter-user-info">
+                    <dt class="a11y-hidden">사용자 이름</dt>
+                    <dd class="twitter-user-name">김데레사</dd>
+                    <dt class="a11y-hidden">사용자 아이디</dt>
+                    <dd class="twitter-user-id">
+                        <a href="http://twitter.com/seulbinim">@seulbinim</a>
+                    </dd>
+                </dl>
+                <figure class="twitter-user-picture">
+                    <img src="./images/seulbinim.jpg" alt="" class="twitter-thumbnail">
+                    <figcaption class="a11y-hidden">사용자 프로필</figcaption>
+                </figure>
+                <p class="twitter-summary">웹표준 핵심 가이드북 개정판 출시 기념으로 세미나를 준비했습니다. 참석을 원하시는 분들은 트위터로 문의하시기 바랍니다.
+                </p>
+                <time class="twitter-date icon-calendar" datetime="2018-04-03T15:57:46">2018.04.03</time>
+            </article>
         </main>
         <article class="slogan">슬로건</article>
         <footer class="footer">푸터</footer>
         <button class="btn-grid" type="button">Grid</button>
     </div>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/webcafe.js"></script>
+    <!-- <script src="./js/jquery.min.js"></script>
+    <script src="./js/webcafe.js"></script> -->
 </body>
 
 </html>

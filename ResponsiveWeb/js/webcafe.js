@@ -1,23 +1,23 @@
-// var container = document.querySelector(".container");
-// var grid = document.querySelector(".btn-grid");
+$(document).ready(function () {
 
-// grid.addEventListener("click", function() {
-//   container.classList.toggle("is-act");
-// });
+  var container = $('.container');
+  var grid = $('.btn-grid');
+  var video = $('.news-video');
+  video.get(0).volume = 0.0;
 
-// $(document).ready(function() {
-//   var video = $(".news-video");
-//   video.on("mouseover focusin", function() {
-//     $(this).attr("autoplay", "");
-//   });
-//   video.on("mouseout focusout", function() {
-//     $(this).attr("autoplay", "false");
-//   });
-// });
+  video.on('mouseover focusin', function () {
+    this.play();
+    this.volume = 1.0;
+  });
 
-var video1 = document.querySelector("video");
-video1.addEventListener("click", function() {
-  video1.autoplay = "true";
-  video1.load();
+
+  video.on('mouseout focusout', function () {
+    this.pause();
+  });
+
+
+  grid.click(function () {
+    container.toggleClass('is-act');
+  });
+
 });
-
