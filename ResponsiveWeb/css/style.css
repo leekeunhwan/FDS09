@@ -82,13 +82,7 @@ body {
   z-index: 100;
   left: 50%;
   transform: translateX(-50%);
-  background: repeating-linear-gradient(
-    to right,
-    rgba(255, 0, 0, 0.2),
-    rgba(255, 0, 0, 0.2) 65px,
-    transparent 65px,
-    transparent 85px
-  );
+  background: repeating-linear-gradient( to right, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.2) 65px, transparent 65px, transparent 85px);
 }
 
 /* 레이아웃 공통 */
@@ -332,8 +326,7 @@ body a:hover {
 .main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-column: 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px
-    65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px;
+  -ms-grid-column: 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px;
   -ms-grid-rows: auto auto;
   grid-template-columns: repeat(12, 65px);
   grid-column-gap: 20px;
@@ -363,12 +356,14 @@ body a:hover {
 }
 
 /* 메인 콘텐츠 단락 공통 */
+
 .main [class$="-summary"] {
   line-height: 1.5;
   margin: 1em 0;
 }
 
 /* 추천 서적 */
+
 .recommend-book {
   /* width: 350px; */
   /* grid-area: 1 / 1 / 1 / span 4; */
@@ -382,9 +377,11 @@ body a:hover {
 }
 
 /* 추천서적 제목 */
+
 .recommend-book-heading {
   background-position: 0 0;
 }
+
 .recommend-book-heading .en-heading {
   color: #abd375;
 }
@@ -434,7 +431,9 @@ body a:hover {
 }
 
 /* 선생님이 짜신 CSS */
+
 /* 새소식 제목 */
+
 .news-heading {
   background-position: 0 -230px;
 }
@@ -444,6 +443,7 @@ body a:hover {
 }
 
 /* 새소식 동영상 */
+
 .news-container {
   margin: 1em 0;
 }
@@ -459,7 +459,9 @@ body a:hover {
 }
 
 /* 내가 한 CSS */
+
 /* 새소식 제목 */
+
 /* .news-heading {
   background: url("./images/sprite_main.png") no-repeat 0px -230px;
   margin: 1em 0;
@@ -473,6 +475,7 @@ body a:hover {
 } */
 
 /* 새소식 비디오 */
+
 /* .news-container .news-video {
   max-width: 650px;
   margin: 0 auto;
@@ -494,6 +497,7 @@ body a:hover {
 } */
 
 /* 게시판 */
+
 .board {
   /* width: 350px; */
   /* grid-area: 2 / 1 / 2 / span 4; */
@@ -507,6 +511,7 @@ body a:hover {
 }
 
 /* 게시판 제목 */
+
 .board-heading {
   background-position: 0 -115px;
   margin-bottom: 0.5em;
@@ -524,15 +529,19 @@ body a:hover {
 
 .board-list a,
 .board-list time {
-  vertical-align: middle; /* 세로축의 중심을 맞추는 것 */
+  vertical-align: middle;
+  /* 세로축의 중심을 맞추는 것 */
 }
 
 .board-list a {
   display: inline-block;
   width: calc(100% - 100px);
-  white-space: nowrap; /* 강제 줄바꿈을 허용하지 않도록 하는 것 */
-  overflow: hidden; /* 넘치는 부분을 숨기도록 한다. */
-  text-overflow: ellipsis; /* text-overflow는 글자가 넘치는 부분에 대해서 어떻게 할것인지를 정한다. ellipsis는 글씨가 공간에 비해서 많을 경우 줄일수 있도록 하는 것 */
+  white-space: nowrap;
+  /* 강제 줄바꿈을 허용하지 않도록 하는 것 */
+  overflow: hidden;
+  /* 넘치는 부분을 숨기도록 한다. */
+  text-overflow: ellipsis;
+  /* text-overflow는 글자가 넘치는 부분에 대해서 어떻게 할것인지를 정한다. ellipsis는 글씨가 공간에 비해서 많을 경우 줄일수 있도록 하는 것 */
   padding: 0.5em 0;
 }
 
@@ -548,6 +557,7 @@ body a:hover {
 }
 
 /* 내가 짠 코드 */
+
 /* 
 .board-heading {
   background-position: 0 -115px;
@@ -570,10 +580,10 @@ body a:hover {
 } */
 
 /* 인기 사이트 */
+
 .favorite-site {
   /* order: 1; */
   /* width: 250px; */
-  background-color: palegreen;
   /* grid-area: 2 / 10 / 2 / span 3; */
   grid-area: site;
   /* float: right; */
@@ -583,7 +593,38 @@ body a:hover {
   -ms-grid-row-span: 3;
 }
 
+/* 인기 사이트 제목 */
+
+.favorite-site-heading {
+  background-position: 0 -345px;
+}
+
+.favorite-site-heading .en-heading {
+  color: #eea60a;
+}
+
+/* 인기 사이트 목록 */
+
+.favorite-site-list {
+  overflow: hidden;
+}
+
+.favorite-site-list li {
+  counter-increment: number;
+  margin: 1em 0;
+}
+
+.favorite-site-list li::before {
+  content: counter(number, decimal);
+  background: #eea60a;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0 0.5em;
+  margin-right: 5px;
+}
+
 /* 트위터 */
+
 .twitter {
   /* width: 400px; */
   /* grid-area: 2 / 5 / 2 / span 5; */
@@ -597,6 +638,7 @@ body a:hover {
 }
 
 /* 선생님이 짜신 코드 */
+
 .twitter-heading {
   background-position: 0 -460px;
 }
@@ -606,6 +648,7 @@ body a:hover {
 }
 
 /* 트위터 사용자 정보 */
+
 .twitter-user-info {
   float: left;
   width: calc(100% - 150px);
@@ -626,6 +669,7 @@ body a:hover {
 }
 
 /* 트위터 사용자 프로필 이미지 */
+
 .twitter-user-picture {
   float: right;
   margin: 0 0 0.5em 1em;
@@ -638,10 +682,11 @@ body a:hover {
 }
 
 /* 트위터 본문 */
-.twitter-summary {
-}
+
+.twitter-summary {}
 
 /* 트위터 게시물 날짜 */
+
 .twitter-date {
   display: block;
   clear: both;
@@ -649,6 +694,7 @@ body a:hover {
 }
 
 /* 내가 짠 코드 */
+
 /* .twitter-heading {
   background-position: 0 -460px;
 }
@@ -692,15 +738,66 @@ body a:hover {
 /* 슬로건 */
 
 .slogan {
-  background-color: silver;
-  height: 10vh;
   clear: both;
   margin-top: 10px;
+  position: relative;
+}
+
+/* 슬로건 제목 */
+
+.slogan-heading {
+  position: absolute;
+  bottom: -35px;
+  width: 110px;
+  height: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slogan-heading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('./images/coffee.png') no-repeat;
+  top: 0;
+  left: 0;
+}
+
+/* 슬로건 본문 */
+
+.slogan-content {
+  font-size: 1.6rem;
+  margin: 1em 5em 1em 10em;
+}
+
+.slogan-content q::before {
+  font-size: 5rem;
+  position: relative;
+  top: 2rem;
+}
+
+.slogan-content q::after {
+  content: "";
 }
 
 /* 푸터 */
 
 .footer {
-  background-color: skyblue;
-  height: 10vh;
+  background-color: #988574;
+  color: #fff;
+  text-align: center;
+  padding: 2em 0;
+}
+
+/* 주소 */
+
+.address {
+  font-style: normal;
+  margin-bottom: 1em;
+}
+
+.copyright {
+  font-size: 1em;
 }
