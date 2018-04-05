@@ -1,4 +1,3 @@
-@charset "utf-8";
 @import url("normalize.css");
 @import url("fonts.css");
 /* 초기화 스타일 */
@@ -35,8 +34,7 @@ legend,
 
 /* ClearFix */
 
-.clearfix::after,
-.board-list li::after {
+.clearfix::after {
   content: "";
   clear: both;
   display: block;
@@ -49,302 +47,14 @@ html {
 }
 
 body {
-  background-color: #fff;
-  font-size: 1.4rem;
   color: #181818;
   font-family: "Noto Sans Regular", sans-serif;
 }
 
-/* grid 토글 버튼 */
-
-.btn-grid {
-  position: fixed;
-  top: 2em;
-  right: 2em;
-  background: #000;
-  color: #fff;
-  padding: 1em;
-  border-radius: 5px;
-}
-
-/* 컨테이너 */
-
-.container {
-  position: relative;
-}
-
-.is-act::before {
-  content: "";
-  position: absolute;
-  width: 1000px;
-  height: 100%;
-  background: #00f;
-  z-index: 100;
-  left: 50%;
-  transform: translateX(-50%);
-  background: repeating-linear-gradient( to right, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.2) 65px, transparent 65px, transparent 85px);
-}
-
-/* 레이아웃 공통 */
-
-.header,
-.main,
-.slogan {
-  width: 1000px;
-  margin: 0 auto;
-}
-
-/* 헤더 */
-
-@supports (display: grid) {
-  .header {
-    background-color: #fff;
-    position: relative;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 30% 70%;
-    -ms-grid-rows: 50px 50px;
-    grid-template-columns: repeat(12, 65px);
-    grid-template-rows: 50px 50px;
-    grid-column-gap: 20px;
-  }
-  /* header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: repeating-linear-gradient(
-      to right,
-      rgba(255, 0, 0, 0.2),
-      rgba(255, 0, 0, 0.2) 65px,
-      transparent 65px,
-      transparent 85px
-    );
-    width: 100%;
-    height: 100%;
-  } */
-}
-
-/* 로고 */
-
-.logo {
-  margin: 0;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  grid-column: 1 / span 3;
-  grid-row: 1 / span 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* position: absolute;
-  margin: 30px; */
-  /* top: 50%;
-  left: 50px;
-  margin-top: -17px; 배치하고자 하는 이미지 높이의 절반 크기만큼 음수로 지정 */
-  /* transform: translateY(-50%); */
-  /* float: left; */
-}
-
-.logo a,
-.logo img {
-  display: block;
-  /* line-height: 1; */
-}
-
-/* 멤버 링크 */
-
-.member {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-column: 10 / span 3;
-  grid-row: 1 / 2;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  /* text-align: right;
-  font-size: 0;
-  position: relative;
-  right: -10px;
-  margin-bottom: 50px; */
-  /* float: right;     */
-}
-
-.member li {
-  /* display: inline;
-  font-size: 1rem; */
-  /* float: left; */
-}
-
-/* .member li::before {
-  content: "|";
-}
-
-.member li:first-child::before {
-  content: "";
-} */
-
-.member a {
-  padding: 10px;
-  /* display: inline-block; */
-}
-
-/* 검색 폼 */
-
-.search {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 3;
-  grid-column: 7 / span 6;
-  grid-row: 2 / 3;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  /* display: flex;
-  justify-content: flex-end; */
-  /* clear: both; */
-  /* float: right; */
-}
-
-.search fieldset {
-  border: 0;
-  padding: 0;
-  margin: 0;
-}
-
-input[type="search"] {
-  height: 35px;
-  width: 400px;
-  padding: 2px 2px 2px 10px;
-  border: 1px solid #666;
-  border-radius: 7px;
-}
-
-.btn-search {
-  height: 35px;
-  width: 50px;
-  color: #fff;
-  border: 1px solid #666;
-  background-color: #978575;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-/* 내비게이션 */
-
-.navigation {
-  padding-top: 0.5em;
-  background-color: #988574;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-  /* height: 100px;
-  overflow: auto; */
-  /* background-image: url("../images/normal.jpg");
-  background-size: 100px 100px;
-  background-repeat: no-repeat;
-  background-position: 100% 100px; */
-  /* background: #988574 url("../images/small.jpg") 100% 0% /200px no-repeat scroll; */
-  /* background: url("../images/normal.jpg") no-repeat 0% 0% /200px scroll,
-    url("../images/small.jpg") no-repeat 100% 0% /200px scroll; */
-  /* background-color: #988574;
-  background-image: url("../images/normal.jpg"), url("../images/small.jpg");
-  background-repeat: no-repeat, no-repeat;
-  background-position: 0 0, 100% 0;
-  background-size: 200px, 300px;
-  background-attachment: scroll, scroll; */
-  /* background-attachment: fixed; */
-  /* background-image: linear-gradient(
-      180deg,
-      rgba(255, 0, 0, 0.5),
-      rgba(255, 0, 0, 0.5) 35%,
-      rgba(0, 255, 0, 0.5) 35%,
-      rgba(0, 255, 0, 0.5) 70%,
-      rgba(0, 0, 255, 0.5) 70%,
-      rgba(0, 0, 255, 0.5) 100%
-    ),
-    url("../images/normal.jpg");
-  background-repeat: no-repeat, repeat;
-  background-position: 0 0;
-  background-size: 100%, 100%; */
-  /* background-image: radial-gradient(circle at 70% 20%, green 50%, red 50%); */
-  /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
-}
-
-.menu {
-  width: 1000px;
-  margin: 0 auto;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.6rem;
-}
-
-.menu span {
-  display: block;
-  cursor: pointer;
-  font-size: 1.8rem;
-  padding: 0.5em 0;
-  font-family: "Noto Sans Bold", sans-serif;
-  text-shadow: 0px 1px 0 #000, 1px 0px 0 #000, 0px -1px 0 #000, -1px 0px 0 #000;
-  /* transition-property: color, font-size;
-  transition-duration: 3000ms, 2000ms;
-  transition-delay: 0s, 3s;
-  transition-timing-function: cubic-bezier(1, .01, 0, 1.01); */
-  transition: all 500ms ease;
-}
-
-.menu span:hover,
-.menu li:focus span,
-.menu .sub-menu a:hover,
-.menu .sub-menu a:focus {
-  color: #ff0;
-}
-
-.sub-menu {
-  margin-top: 0.5em;
-}
-
-.sub-menu li {
-  margin: 0.5em 0 0.5em 0;
-}
-
-.sub-menu a {
-  display: block;
-  padding: 0.5em 0;
-}
-
-/* 메인 콘텐츠 */
-
-body a:hover {
-  color: red;
-}
-
-.main {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-column: 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px;
-  -ms-grid-rows: auto auto;
-  grid-template-columns: repeat(12, 65px);
-  grid-column-gap: 20px;
-  grid-template-rows: auto auto;
-  grid-template-areas: "book  book  book  book  news    news    news    news    news    news news news" "board board board board twitter twitter twitter twitter twitter site site site";
-  /* display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between; */
-}
-
-/* .main section {
-  height: 30vh;
-} */
-
 /* 메인 콘텐츠 섹션 제목 공통 */
 
 .main-section-heading {
-  background-image: url("./images/sprite_main.png");
+  background-image: url("images/sprite_main.png");
   background-repeat: no-repeat;
   margin: 1em 0;
   min-height: 60px;
@@ -362,21 +72,9 @@ body a:hover {
   margin: 1em 0;
 }
 
-/* 추천 서적 */
+/* 메인 콘텐츠 섹션 제목 공통 */
 
-.recommend-book {
-  /* width: 350px; */
-  /* grid-area: 1 / 1 / 1 / span 4; */
-  grid-area: book;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  /* ms는 뭐..  */
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  /* float: left; */
-}
-
-/* 추천서적 제목 */
+/* 추천서적 제목 공통 */
 
 .recommend-book-heading {
   background-position: 0 0;
@@ -386,7 +84,7 @@ body a:hover {
   color: #abd375;
 }
 
-/* 추천서적 이미지 */
+/* 추천서적 커버이미지 공통 */
 
 .recommend-book-cover {
   width: 75%;
@@ -397,8 +95,9 @@ body a:hover {
 .recommend-book-cover img {
   max-width: 100%;
   height: auto;
-  /* 원본이미지의 크기를 넘어가지 않도록 한다 */
 }
+
+/* 추천서적 저자 및 평점 공통 */
 
 .recommend-book-detail {
   text-align: center;
@@ -410,29 +109,14 @@ body a:hover {
   display: inline-block;
 }
 
-/* 추천서적 평점 */
+/* 추천서적 평점 공통 */
 
 .recommend-book-grade {
   color: #abd375;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
-/* 새소식 */
-
-.news {
-  /* width: 650px; */
-  /* grid-area: 1 / 5 / 1 / span 8; */
-  grid-area: news;
-  /* float: left; */
-  -ms-grid-column: 9;
-  -ms-grid-column-span: 24;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-}
-
-/* 선생님이 짜신 CSS */
-
-/* 새소식 제목 */
+/* 새소식 제목 공통 */
 
 .news-heading {
   background-position: 0 -230px;
@@ -442,7 +126,7 @@ body a:hover {
   color: #e8ca58;
 }
 
-/* 새소식 동영상 */
+/* 새소식 동영상 공통 */
 
 .news-container {
   margin: 1em 0;
@@ -453,64 +137,14 @@ body a:hover {
   height: auto;
 }
 
+/* 새소식 날짜 정보 공통 */
+
 .news-date {
   display: block;
   text-align: right;
 }
 
-/* 내가 한 CSS */
-
-/* 새소식 제목 */
-
-/* .news-heading {
-  background: url("./images/sprite_main.png") no-repeat 0px -230px;
-  margin: 1em 0;
-  min-height: 60px;
-  padding: 5px 0 0 65px;
-}
-
-.news-heading .en-heading {
-  display: block;
-  color: #d1ab39;
-} */
-
-/* 새소식 비디오 */
-
-/* .news-container .news-video {
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.news-container .news-caption {
-  color: white;
-}
-
-.news-container .news-summary {
-  line-height: 1.5;
-  margin: 15px 0;
-  font-size: 1em;
-}
-
-.news .news-date {
-  display: block;
-  text-align: right;
-} */
-
-/* 게시판 */
-
-.board {
-  /* width: 350px; */
-  /* grid-area: 2 / 1 / 2 / span 4; */
-  grid-area: board;
-  /* float: left; */
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 3;
-  position: relative;
-}
-
-/* 게시판 제목 */
+/* 게시판 제목 공통 */
 
 .board-heading {
   background-position: 0 -115px;
@@ -521,7 +155,7 @@ body a:hover {
   color: #c7b39a;
 }
 
-/* 게시판 목록 */
+/* 게시판 목록 공통 */
 
 .board-list li {
   margin: 0.5em 0;
@@ -530,18 +164,14 @@ body a:hover {
 .board-list a,
 .board-list time {
   vertical-align: middle;
-  /* 세로축의 중심을 맞추는 것 */
 }
 
 .board-list a {
   display: inline-block;
   width: calc(100% - 100px);
   white-space: nowrap;
-  /* 강제 줄바꿈을 허용하지 않도록 하는 것 */
   overflow: hidden;
-  /* 넘치는 부분을 숨기도록 한다. */
   text-overflow: ellipsis;
-  /* text-overflow는 글자가 넘치는 부분에 대해서 어떻게 할것인지를 정한다. ellipsis는 글씨가 공간에 비해서 많을 경우 줄일수 있도록 하는 것 */
   padding: 0.5em 0;
 }
 
@@ -553,47 +183,10 @@ body a:hover {
 }
 
 .board-more::before {
-  color: #4f881e;
+  color: #abd375;
 }
 
-/* 내가 짠 코드 */
-
-/* 
-.board-heading {
-  background-position: 0 -115px;
-  background-color: blue;
-}
-.board-heading .en-heading {
-  color: #c6b29a;
-}
-.board .board-list {
-  background-color: red;
-  display: inline-block;
-}
-.board .board-list time {
-  background-color: yellow;
-  float: right;
-}
-.board .board-more {
-  background-color: aqua;
-  float: right;
-} */
-
-/* 인기 사이트 */
-
-.favorite-site {
-  /* order: 1; */
-  /* width: 250px; */
-  /* grid-area: 2 / 10 / 2 / span 3; */
-  grid-area: site;
-  /* float: right; */
-  -ms-grid-column: 8;
-  -ms-grid-column-span: 18;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 3;
-}
-
-/* 인기 사이트 제목 */
+/* 인기 사이트 제목 공통 */
 
 .favorite-site-heading {
   background-position: 0 -345px;
@@ -603,7 +196,7 @@ body a:hover {
   color: #eea60a;
 }
 
-/* 인기 사이트 목록 */
+/* 인기 사이트 목록 공통 */
 
 .favorite-site-list {
   overflow: hidden;
@@ -620,24 +213,10 @@ body a:hover {
   color: #fff;
   border-radius: 50%;
   padding: 0 0.5em;
-  margin-right: 5px;
+  margin-right: 0.5em;
 }
 
-/* 트위터 */
-
-.twitter {
-  /* width: 400px; */
-  /* grid-area: 2 / 5 / 2 / span 5; */
-  grid-area: twitter;
-  /* float: left; */
-  -ms-grid-column: 18;
-  -ms-grid-column-span: 24;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 3;
-  position: relative;
-}
-
-/* 선생님이 짜신 코드 */
+/* 트위터 제목 공통 */
 
 .twitter-heading {
   background-position: 0 -460px;
@@ -647,12 +226,12 @@ body a:hover {
   color: #6aaee6;
 }
 
-/* 트위터 사용자 정보 */
+/* 트위터 사용자 정보 공통 */
 
 .twitter-user-info {
   float: left;
-  width: calc(100% - 150px);
   margin-bottom: 1em;
+  width: calc(100% - 150px);
 }
 
 .twitter-user-name,
@@ -668,24 +247,20 @@ body a:hover {
   font-family: "Noto Sans Bold";
 }
 
-/* 트위터 사용자 프로필 이미지 */
+/* 트위터 사용자 프로필 이미지 공통 */
 
-.twitter-user-picture {
+.twitter-profile {
   float: right;
   margin: 0 0 0.5em 1em;
 }
 
 .twitter-thumbnail {
   border-radius: 50%;
-  border: 1px solid #333;
   padding: 0.5em;
+  border: 1px solid #333;
 }
 
-/* 트위터 본문 */
-
-.twitter-summary {}
-
-/* 트위터 게시물 날짜 */
+/* 트위터 게시물 날짜 공통 */
 
 .twitter-date {
   display: block;
@@ -693,96 +268,7 @@ body a:hover {
   text-align: right;
 }
 
-/* 내가 짠 코드 */
-
-/* .twitter-heading {
-  background-position: 0 -460px;
-}
-
-.twitter-heading .en-heading {
-  color: #4baeeb;
-}
-
-.twitter-user-info {
-  display: inline-block;
-}
-
-.twitter-user-name {
-  display: inline-block;
-}
-
-.twitter-user-id {
-  display: inline-block;
-}
-
-.twitter-user-picture .twitter-thumbnail {
-  display: inline-block;
-  position: absolute;
-  padding: 5px;
-  top: 60px;
-  right: 0;
-  border-radius: 50%;
-  border: 1px solid black;
-}
-
-.twitter-summary {
-  display: block;
-  width: 270px;
-}
-
-.twitter-date {
-  float: right;
-  margin-right: 20px;
-} */
-
-/* 슬로건 */
-
-.slogan {
-  clear: both;
-  margin-top: 10px;
-  position: relative;
-}
-
-/* 슬로건 제목 */
-
-.slogan-heading {
-  position: absolute;
-  bottom: -35px;
-  width: 110px;
-  height: 83px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.slogan-heading::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url('./images/coffee.png') no-repeat;
-  top: 0;
-  left: 0;
-}
-
-/* 슬로건 본문 */
-
-.slogan-content {
-  font-size: 1.6rem;
-  margin: 1em 5em 1em 10em;
-}
-
-.slogan-content q::before {
-  font-size: 5rem;
-  position: relative;
-  top: 2rem;
-}
-
-.slogan-content q::after {
-  content: "";
-}
-
-/* 푸터 */
+/* 푸터 공통 */
 
 .footer {
   background-color: #988574;
@@ -791,7 +277,7 @@ body a:hover {
   padding: 2em 0;
 }
 
-/* 주소 */
+/* 주소 및 저작권 공통 */
 
 .address {
   font-style: normal;
@@ -800,4 +286,408 @@ body a:hover {
 
 .copyright {
   font-size: 1em;
+}
+
+/* 일 디바이스 */
+
+@media screen and (max-width: 999px) {
+  body {
+    font-size: 1.6rem;
+  }
+  /* 모바일 컨테이너 */
+  .container {
+    position: relative;
+  }
+
+  /* 모바일 헤더 */
+  .header {
+    background: #38302e;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+  }
+  /* 모바일 로고 */
+  .logo {
+    margin: 0;
+    padding: 0.5em 0 0.25em;
+  }
+  /* 모바일 멤버링크 */
+  .member {
+    background: #988574;
+    order: -1;
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+    margin: 0 -1em;
+    padding: 0.35em 0;
+  }
+  .member a {
+    display: block;
+    padding: 0.5em 1em;
+  }
+  .member a:hover,
+  .member a:focus {
+    color: #ffc;
+  }
+  /* 모바일 검색 폼 */
+  input[type="search"] {
+    width: calc(100% - 40px);
+    height: 30px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 1px 1px 1px 1em;
+  }
+  .btn-search {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background: transparent;
+  }
+  .btn-search::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: url("images/btn_search.png") no-repeat 0 0;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+  }
+
+  /* 모바일 내비게이션 */
+
+  /* 모바일 메뉴바 제어버튼 */
+  .btn-menubar {
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5em;
+    right: 2em;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .menubar {
+    background: #fff;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    transition: all 70ms ease;
+  }
+
+  .menubar-top {
+    top: 0;
+  }
+
+  .is-act .menubar-top {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .menubar-middle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .is-act .menubar-middle {
+    transform: translate(-100%, -50%);
+  }
+  .menubar-bottom {
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .is-act .menubar-bottom {
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+  }
+
+  /* 모바일 메인 메뉴 */
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    width: 70vw;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: all 200ms ease-in-out;
+    padding: 50px;
+  }
+
+  .is-act .menu {
+    transform: translateX(0);
+  }
+
+  .menu-item {
+    display: block;
+    cursor: pointer;
+    padding: 0.5em 0;
+    margin: 0.5em 0;
+  }
+
+  .sub-menu {
+    display: none;
+    list-style-type: disc;
+  }
+
+  .menu-act ~ .sub-menu {
+    display: block;
+  }
+
+  .sub-menu a {
+    display: block;
+    padding: 0.5em 0;
+    margin: 0.5em 0;
+  }
+
+  .menu-item:hover,
+  .menu-item:focus,
+  .sub-menu a:hover,
+  .sub-menu a:focus {
+    color: #ff0;
+  }
+  /* 추가 설명 필요 */
+  .board {
+    position: relative;
+  }
+}
+
+/* 데스크탑 디바이스 */
+
+@media screen and (min-width: 1000px) {
+  body {
+    font-size: 1.4rem;
+  }
+  /* 데스크탑 레이아웃 공통 */
+  .header,
+  .main,
+  .slogan {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  /* 데스크탑 헤더 */
+  .header {
+    background-color: #fff;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 30% 70%;
+    -ms-grid-rows: 50px 50px;
+    grid-template-columns: repeat(12, 65px);
+    grid-template-rows: 50px 50px;
+    grid-column-gap: 20px;
+  }
+  /* 데스크탑 로고 */
+  .logo {
+    margin: 0;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo a,
+  .logo img {
+    display: block;
+  }
+  /* 데스크탑 멤버 링크 */
+  .member {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-column: 10 / span 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .member li::before {
+    content: "|";
+  }
+  .member li:first-child::before {
+    content: "";
+  }
+  .member a {
+    padding: 0.5em 0.5em;
+    margin-left: 2px;
+  }
+  /* 데스크 탑 검색 폼 */
+  .search {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-column: 7 / span 6;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .search fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  input[type="search"] {
+    height: 35px;
+    width: 400px;
+    padding: 2px 2px 2px 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    margin-right: 0.5em;
+  }
+  .btn-search {
+    height: 35px;
+    width: 50px;
+    padding: 5px;
+    color: #fff;
+    border: 1px solid #666;
+    background-color: #988574;
+    border-radius: 5px;
+  }
+  /* 데스크탑 내비게이션 */
+  .navigation {
+    padding-top: 0.5em;
+    background-color: #988574;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+  /* 데스크탑 메인메뉴 */
+  .menu {
+    width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+  }
+  .menu span {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    padding: 0.5em 0;
+    font-family: "Noto Sans Bold", sans-serif;
+    text-shadow: 0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000;
+    transition: all 500ms ease-in-out;
+  }
+  .menu span:hover,
+  .menu li:focus span {
+    color: yellow;
+  }
+  .sub-menu {
+    margin-top: 0.5em;
+  }
+  .sub-menu li {
+    margin: 0.5em 0 0.5em 1em;
+  }
+  .sub-menu a {
+    display: block;
+    padding: 0.5em 0;
+  }
+  /* 데스크탑 메인 콘텐츠 */
+  .main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px
+      20px 65px 20px 65px 20px 65px 20px 65px 20px 65px 20px 65px;
+    -ms-grid-rows: auto auto;
+    grid-template-columns: repeat(12, 65px);
+    grid-column-gap: 20px;
+    grid-template-rows: auto auto;
+    grid-template-areas: "book  book  book  book  news    news    news    news    news    news news news" "board board board board twitter twitter twitter twitter twitter site site site";
+  }
+  /* 데스크탑 추천 서적 */
+  .recommend-book {
+    grid-area: book;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+  }
+  /* 데스크탑 새소식 */
+  .news {
+    grid-area: news;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 23;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+  }
+  /* 데스크탑 게시판 */
+  .board {
+    grid-area: board;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 8;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    position: relative;
+  }
+  /* 데스크탑 인기 사이트 */
+  .favorite-site {
+    grid-area: site;
+    -ms-grid-column: 9;
+    -ms-grid-column-span: 18;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+  }
+  /* 데스크탑 트위터 */
+  .twitter {
+    grid-area: twitter;
+    -ms-grid-column: 20;
+    -ms-grid-column-span: 23;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+  }
+  /* 데스크탑 슬로건 */
+  .slogan {
+    clear: both;
+    margin-top: 10px;
+    position: relative;
+  }
+  /* 데스크탑 슬로건 제목 */
+  .slogan-heading {
+    position: absolute;
+    bottom: -35px;
+    width: 110px;
+    height: 83px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slogan-heading::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("images/coffee.png") no-repeat;
+  }
+  /* 데스크탑 슬로건 본문 */
+  .slogan-content {
+    font-size: 1.6rem;
+    margin: 1em 5em 1em 10em;
+  }
+  .slogan-content q::before {
+    font-size: 5rem;
+    position: relative;
+    top: 2rem;
+  }
+  .slogan-content q::after {
+    content: "";
+  }
 }
