@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>고해상도 환경을 위한 배경이미지 처리</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>테이블 마크업</h1>
+</body>
+<table>
+    <thead>
+        <tr>
+            <th id="name">이름</th>
+            <th id="en">영어</th>
+            <th id="ko">국어</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th id="sum">합계</th>
+            <td headers="en sum">150</td>
+            <!-- headers라는 어트리뷰트를 이용하여 접근성을 개선할 수 있다. -->
+            <td headers="ko sum">180</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        <!-- tbody태그는 여러개가 올 수 있다. -->
+        <tr>
+            <td>이영희</td>
+            <td>80</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>김철수</td>
+            <td>70</td>
+            <td>90</td>
+        </tr>
+    </tbody>
+</table>
+
+</html>

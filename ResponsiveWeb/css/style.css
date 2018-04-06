@@ -40,6 +40,12 @@ legend,
   display: block;
 }
 
+/* 반응형 콘텐츠 */
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 /* 기본 스타일 */
 
 html {
@@ -168,9 +174,10 @@ body {
 
 .board-list a {
   display: inline-block;
-  width: calc(100% - 100px);
+  width: calc(100% - 8em);
   white-space: nowrap;
   overflow: hidden;
+  vertical-align: middle;
   text-overflow: ellipsis;
   padding: 0.5em 0;
 }
@@ -288,7 +295,7 @@ body {
   font-size: 1em;
 }
 
-/* 일 디바이스 */
+/* 모바일 디바이스 */
 
 @media screen and (max-width: 999px) {
   body {
@@ -420,6 +427,7 @@ body {
     transform: translateX(-100%);
     transition: all 200ms ease-in-out;
     padding: 50px;
+    z-index: 100;
   }
 
   .is-act .menu {
@@ -454,9 +462,36 @@ body {
   .sub-menu a:focus {
     color: #ff0;
   }
-  /* 추가 설명 필요 */
+  .main {
+    padding: 0 1em;
+  }
+
+  /* 모바일 게시판 */
+
   .board {
     position: relative;
+  }
+
+  /* 모바일 트위터 사용자 프로필 이미지 */
+  .twitter-profile {
+    width: 25%;
+  }
+
+  /* 모바일 트위터 사용자 정보 */
+  .twitter-user-info {
+    float: left;
+    margin-bottom: 1em;
+    width: calc(100% - 0.1em);
+  }
+
+  /* 모바일 슬로건 */
+  .slogan {
+    padding: 2em 1em 1em 1em;
+  }
+
+  .slogan-content {
+    display: block;
+    vertical-align: center;
   }
 }
 
@@ -599,6 +634,7 @@ body {
     display: block;
     padding: 0.5em 0;
   }
+
   /* 데스크탑 메인 콘텐츠 */
   .main {
     display: -ms-grid;
